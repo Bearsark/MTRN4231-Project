@@ -5,7 +5,7 @@ MACHINE VISION NODE INSTRUCTIONS
 When installing this project on a fresh computer, you might have to delete the build, install and log folders before running "colcon build" again. Errors may appear if you don't. Don't forget to source.
 
 Setup Instructions:
-Each of the following should be run in seperate terminals.
+Each of the following should be run in seperate terminals. Do NOT include the quotation marks (") when running commands.
 
 1) To run the camera node:
    IF USING THE STANDARD MICROSOFT CAMERA:
@@ -13,15 +13,27 @@ Each of the following should be run in seperate terminals.
    If an error appears, try restarting the computer. If that doesn't work, run the following
    before trying again:
 	"qv4l2 -R -d /dev/video0"
+
    IF USING THE ASTRA DEPTH CAMERA:
 	"ros2 launch astra_camera astra_pro.launch.py"
    Make the sure astra camera files are installed, and that the above command is run from the "~/4231/astra_ws" folder.
    
 2) To run the Yolov8 node:
+   IF USING THE STANDARD MICROSOFT CAMERA:
 	"ros2 launch yolov8_bringup yolov8.launch.py input_image_topic:='/image_raw' device:='cpu'"
+
+   IF USING THE ASTRA DEPTH CAMERA:
+	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' device:='cpu' target_frame:=camera_link"
+   If the above has problems, the astra camera setup files may not be installed properly. Yolo needs to be configured to use it.
 
 3) To run Rviz with Yolo:
 	"ros2 run rviz2 rviz2"
+   Subscribe to the topic:
+	- /yolo/dbg_image (for yolo overlay on image)
+
+   IF USING ASTRA DEPTH CAMERA:
+   Also subscribe to the topics:
+	- /camera/depth/points under "By display type > PointCloud2" (to show point cloud on Rviz)
 
 3) To run the machine vision node, use the command:
 	"ros2 run cpp_mac_vis mac_vis"
