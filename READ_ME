@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------------------
+MACHINE VISION NODE INSTRUCTIONS
+-------------------------------------------------------------------------------------------
+
+When installing this project on a fresh computer, you might have to delete the build, install and log folders before running "colcon build" again. Errors may appear if you don't. Don't forget to source.
+
+Setup Instructions:
+Each of the following should be run in seperate terminals.
+
+1) To run the camera node:
+	"ros2 run v4l2_camera v4l2_camera_node"
+   If an error appears, try restarting the computer. If that doesn't work, run the following
+   before trying again:
+	"qv4l2 -R -d /dev/video0"
+   
+2) To run the Yolov8 node:
+	"ros2 launch yolov8_bringup yolov8.launch.py input_image_topic:='/image_raw' device:='cpu'"
+
+3) To run Rviz with Yolo:
+	"ros2 run rviz2 rviz2"
+   Subscribe to topic .........
+
+3) To run the machine vision node, use the command:
+	"ros2 run cpp_mac_vis mac_vis"
+   cpp_mac_vis is the package name, mac_vis is the executable name.
+
