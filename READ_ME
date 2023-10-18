@@ -34,6 +34,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    IF USING ASTRA DEPTH CAMERA:
    Also subscribe to the topics:
 	- /camera/depth/points under "By display type > PointCloud2" (to show point cloud on Rviz)
+	- /yolo/dgb_bb_markers (to show bounding boxes on Rviz)
 
 3) To run the machine vision node, use the command:
 	"ros2 run cpp_mac_vis mac_vis"
