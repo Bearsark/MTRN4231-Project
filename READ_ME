@@ -16,7 +16,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 
    IF USING THE ASTRA DEPTH CAMERA:
 	"ros2 launch astra_camera astra_pro.launch.py"
-   Make the sure astra camera files are installed, and that the above command is run from the "~/4231/astra_ws" folder.
+   Make the sure astra camera files are installed, and that the workspace name does NOT have spaces! E.g. "Bottle_Flip_Project"
    
 2) To run the Yolov8 node:
    IF USING THE STANDARD MICROSOFT CAMERA:
