@@ -23,7 +23,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 	"ros2 launch yolov8_bringup yolov8.launch.py input_image_topic:='/image_raw' device:='cpu'"
 
    IF USING THE ASTRA DEPTH CAMERA:
-	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' device:='cpu' target_frame:=camera_link"
+	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' device:='cpu' target_frame:='camera_link' model:='yolov8n.pt'"
    If the above has problems, the astra camera setup files may not be installed properly. Yolo needs to be configured to use it.
 
 3) To run Rviz with Yolo:
