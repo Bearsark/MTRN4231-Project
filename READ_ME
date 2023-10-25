@@ -17,8 +17,12 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    IF USING THE ASTRA DEPTH CAMERA:
 	"ros2 launch astra_camera astra_pro.launch.py"
    Make the sure astra camera files are installed, and that the workspace name does NOT have spaces! E.g. "Bottle_Flip_Project"
-   
-2) To run the Yolov8 node:
+
+2) To get Yolo trained with bottle images:
+	"yolo task=detect mode=train model=yolov8n.pt imgsz=640 data=my_dataset.yaml epochs=10 batch=1 name=bottle_detection"
+   Make sure you are in the directory of my_dataset.yaml when you run this.
+
+3) To run the Yolov8 node:
    IF USING THE STANDARD MICROSOFT CAMERA:
 	"ros2 launch yolov8_bringup yolov8.launch.py input_image_topic:='/image_raw' device:='cpu'"
 
@@ -26,7 +30,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' device:='cpu' target_frame:='camera_link' model:='yolov8n.pt'"
    If the above has problems, the astra camera setup files may not be installed properly. Yolo needs to be configured to use it.
 
-3) To run Rviz with Yolo:
+4) To run Rviz with Yolo:
 	"ros2 run rviz2 rviz2"
    Subscribe to the topic:
 	- /yolo/dbg_image (for yolo overlay on image)
@@ -36,7 +40,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 	- /camera/depth/points under "By display type > PointCloud2" (to show point cloud on Rviz)
 	- /yolo/dgb_bb_markers (to show bounding boxes on Rviz)
 
-3) To run the machine vision node, use the command:
+5) To run the machine vision node, use the command:
 	"ros2 run cpp_mac_vis mac_vis"
    cpp_mac_vis is the package name, mac_vis is the executable name.
 
