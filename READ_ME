@@ -20,7 +20,8 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 
 2) To get Yolo trained with bottle images:
 	"yolo task=detect mode=train model=yolov8n.pt imgsz=640 data=my_dataset.yaml epochs=10 batch=1 name=bottle_detection"
-   Make sure you are in the directory of my_dataset.yaml when you run this.
+   Make sure you are in the directory of my_dataset.yaml when you run this. If it still doesn't work, try run:
+	"rm /home/mtrn/.config/Ultralytics/settings.yaml"
 
 3) To run the Yolov8 node:
    IF USING THE STANDARD MICROSOFT CAMERA:
