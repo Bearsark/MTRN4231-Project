@@ -5,6 +5,8 @@ COMPUTER VISION SUBSYSTEM INSTRUCTIONS
 When installing this project on a fresh computer, you might have to delete the build, install and log folders before running "colcon build" again. Errors may appear if you don't. Don't forget to source.
 
 Camera setup height: 62 cm
+Length from robot base to camera stand: 139 cm
+Y-axis offset of robot base from camera stand: 10 cm
 Camera angle from horizontal: -50 degrees
 
 Setup Instructions:
@@ -20,6 +22,9 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    IF USING THE ASTRA DEPTH CAMERA:
 	"ros2 launch astra_camera astra_pro.launch.py"
    Make the sure astra camera files are installed, and that the workspace name does NOT have spaces! E.g. "Bottle_Flip_Project". If using the other astra camera, replace astra_pro with astra_mini.
+
+   IF USING THE INTEL REALSENSE CAMERA:
+	"ros2 launch realsense2_camera rs_launch.py depth_module.profile:=1280x720x30 pointcloud.enable:=true"
 
 2) To get Yolo trained with bottle images:
 	"yolo task=detect mode=train model=yolov8n.pt imgsz=640 data=my_dataset.yaml epochs=10 batch=1 name=bottle_detection"
