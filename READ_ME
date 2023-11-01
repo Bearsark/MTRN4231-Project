@@ -4,6 +4,9 @@ COMPUTER VISION SUBSYSTEM INSTRUCTIONS
 
 When installing this project on a fresh computer, you might have to delete the build, install and log folders before running "colcon build" again. Errors may appear if you don't. Don't forget to source.
 
+Camera setup height: 62 cm
+Camera angle from horizontal: -50 degrees
+
 Setup Instructions:
 Each of the following should be run in seperate terminals. Do NOT include the quotation marks (") when running commands.
 
