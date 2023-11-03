@@ -57,3 +57,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 	"ros2 run cv_post_process post_process"
    cv_post_process is the package name, post_process is the executable name.
 
+6) To run the static transformation node, use the command:
+	"ros2 run static_tf static"
+
+
