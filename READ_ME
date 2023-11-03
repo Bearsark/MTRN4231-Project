@@ -25,6 +25,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
 
    IF USING THE INTEL REALSENSE CAMERA:
 	"ros2 launch realsense2_camera rs_launch.py depth_module.profile:=1280x720x30 pointcloud.enable:=true"
+   If this doesn't work, make sure the compute has installed the files properly. Look at the ed forum for the install code.
 
 2) To get Yolo trained with bottle images:
 	"yolo task=detect mode=train model=yolov8n.pt imgsz=640 data=my_dataset.yaml epochs=10 batch=1 name=bottle_detection"
