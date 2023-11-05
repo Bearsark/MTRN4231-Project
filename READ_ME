@@ -14,6 +14,7 @@ Camera angle from horizontal: -50 degrees
 LAUNCH FILE SETUP:
 To run all the nodes instantaneously when using the Intel Realsense camera, use:
 	"ros2 launch cv_bringup cv_bringup.launch.py"
+To quickly set up the RViz display, open the "cv_rviz_config.rviz" RViz config file.
 
 
 MANUAL SETUP INSTRUCTIONS:
@@ -55,10 +56,8 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    Subscribe to the topic:
 	- /yolo/dbg_image (for yolo overlay on image)
 	- /yolo/dgb_bb_markers (to show bounding boxes on Rviz)
-
-   IF USING DEPTH CAMERA:
-   Also subscribe to the topics:
-	- /camera/depth/points under "By display type > PointCloud2" (to show point cloud on Rviz)
+   If using depth camera, you must also subscribe to the depth cloud topic with "PointCloud2".
+   The above setup can be skipped if you open the "cv_rviz_config.rviz" RViz config file.
 
 5) To run the computer vision post processing node, use the command:
 	"ros2 run cv_post_process post_process"
