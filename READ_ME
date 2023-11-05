@@ -4,12 +4,19 @@ COMPUTER VISION SUBSYSTEM INSTRUCTIONS
 
 When installing this project on a fresh computer, you might have to delete the build, install and log folders before running "colcon build" again. Errors may appear if you don't. Don't forget to source.
 
+CAMERA POSITION AND SETUP:
 Camera setup height: 60.5 cm
 Length from robot base to camera stand: 139 cm
 Y-axis offset of robot base from camera stand: 10 cm
 Camera angle from horizontal: -50 degrees
 
-Setup Instructions:
+
+LAUNCH FILE SETUP:
+To run all the nodes instantaneously when using the Intel Realsense camera, use:
+	"ros2 launch cv_bringup cv_bringup.launch.py"
+
+
+MANUAL SETUP INSTRUCTIONS:
 Each of the following should be run in seperate terminals. Do NOT include the quotation marks (") when running commands.
 
 1) To run the camera node:
