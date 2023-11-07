@@ -33,7 +33,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    Make the sure astra camera files are installed, and that the workspace name does NOT have spaces! E.g. "Bottle_Flip_Project". If using the other astra camera, replace astra_pro with astra_mini.
 
    IF USING THE INTEL REALSENSE CAMERA:
-	"ros2 launch realsense2_camera rs_launch.py enable_rgbd:=true enable_sync:=true align_depth.enable:=true pointcloud.enable:=true enable_color:=true enable_depth:=true"
+	"ros2 launch realsense2_camera rs_launch.py enable_rgbd:=true enable_sync:=true align_depth.enable:=true pointcloud.enable:=true enable_color:=true enable_depth:=true depth_module.profile:=848x480x30 rgb_camera.profile:=640x480x30"
    If this doesn't work, make sure the computer has installed the files properly. Look at the ed forum for the install code.
 
 2) To get Yolo trained with bottle images:
@@ -50,7 +50,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    If the above has problems, the astra camera setup files may not be installed properly. Yolo needs to be configured to use it.
 
    IF USING THE INTEL REALSENSE CAMERA:
-	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' input_depth_topic:='/camera/aligned_depth_to_color/image_raw' device:='cpu' target_frame:='camera_link' model:='yolov8n.pt'"
+	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' input_depth_topic:='/camera/aligned_depth_to_color/image_raw' device:='cpu' target_frame:='base_frame' model:='yolov8n.pt'"
 
 4) To run Rviz with Yolo:
 	"ros2 run rviz2 rviz2"
