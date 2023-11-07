@@ -33,7 +33,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    Make the sure astra camera files are installed, and that the workspace name does NOT have spaces! E.g. "Bottle_Flip_Project". If using the other astra camera, replace astra_pro with astra_mini.
 
    IF USING THE INTEL REALSENSE CAMERA:
-	"ros2 launch realsense2_camera rs_launch.py enable_rgbd:=true enable_sync:=true align_depth.enable:=true pointcloud.enable:=true enable_color:=true enable_depth:=true depth_module.profile:=848x480x30 rgb_camera.profile:=640x480x30"
+	"ros2 launch realsense2_camera rs_launch.py enable_rgbd:=true enable_sync:=true align_depth.enable:=true pointcloud.enable:=true depth_module.profile:=848x480x30 rgb_camera.profile:=640x480x30"
    If this doesn't work, make sure the computer has installed the files properly. Look at the ed forum for the install code.
 
 2) To get Yolo trained with bottle images:
