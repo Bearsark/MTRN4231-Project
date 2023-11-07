@@ -50,7 +50,7 @@ Each of the following should be run in seperate terminals. Do NOT include the qu
    If the above has problems, the astra camera setup files may not be installed properly. Yolo needs to be configured to use it.
 
    IF USING THE INTEL REALSENSE CAMERA:
-	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' input_depth_topic:='/camera/depth/image_rect_raw' device:='cpu' target_frame:='camera_link' model:='yolov8n.pt'"
+	"ros2 launch yolov8_bringup yolov8_3d.launch.py input_image_topic:='/camera/color/image_raw' input_depth_topic:='/camera/aligned_depth_to_color/image_raw' device:='cpu' target_frame:='camera_link' model:='yolov8n.pt'"
 
 4) To run Rviz with Yolo:
 	"ros2 run rviz2 rviz2"
