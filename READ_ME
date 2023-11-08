@@ -6,7 +6,7 @@ When updating the nodes from this subsystem, you may have to delete the build, i
 Errors may appear if you don't. Don't forget to source.
 
 CAMERA POSITION AND SETUP:
-Camera setup height: 60.5 cm
+Camera setup height: 62 cm
 Length from robot base to camera stand: 139 cm
 Y-axis offset of robot base from camera stand: 10 cm
 Camera angle from horizontal: -50 degrees
