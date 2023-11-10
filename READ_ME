@@ -13,6 +13,27 @@ Camera angle from horizontal: -50 degrees
 
 URDF SETUP:
 1) In "setupRealur5e.sh", 
+gnome-terminal -t "DriverServer" -e 'ros2 launch ur_robot_driver ur_control.launch.py ur_type:=ur5e robot_ip:=192.168.0.100 initial_joint_controller:=joint_trajectory_controller use_fake_hardware:=false launch_rviz:=false'
+
+
+
+sleep 10
+
+
+
+gnome-terminal -t "MoveitServer" -e 'ros2 launch ur_moveit_config ur_moveit.launch.py robot_ip:=192.168.0.100 ur_type:=ur5e launch_rviz:=true description_package:=ur_with_pizza_cutter_description description_file:=ur_with_pizza_cutter.xacro'
+
+in 
+"Home/4231/4231_demo_packages/src"
+
+need folders
+"pizza_cutter"
+"ur_with_pizza_cutter"
+
+from vincents laptop
+
+
+
 
 
 LAUNCH FILE SETUP:
