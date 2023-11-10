@@ -11,6 +11,9 @@ Length from robot base to camera stand: 139 cm
 Y-axis offset of robot base from camera stand: 10 cm
 Camera angle from horizontal: -50 degrees
 
+URDF SETUP:
+1) In "setupRealur5e.sh", 
+
 
 LAUNCH FILE SETUP:
 To run all the nodes instantaneously when using the Intel Realsense camera, use:
